@@ -1,4 +1,4 @@
-# Security Notes
+## Security Notes
 
 Welcome to my cybersecurity research repository.
 
