@@ -11,7 +11,87 @@ This repository documents my learning progress and practical research in:
 
 ---
 
-## Web Security
+## Web Security - OWASP Top 10
+
+### 1. SQL Injection (SQLi)
+- Definition:
+  Attacker injects malicious SQL statements via user input to manipulate the database.
+- Impact:
+  Can read, modify, or delete database data; may lead to full system compromise.
+- Prevention:
+  Use prepared statements / parameterized queries, input validation, and ORM frameworks.
+
+### 2. Cross-Site Request Forgery (CSRF)
+- Definition:
+  Forces authenticated users to execute unwanted actions on a web app without their consent.
+- Impact:
+  Unauthorized transactions, account changes, or data deletion.
+- Prevention:
+  Use anti-CSRF tokens, enforce same-site cookies, and validate origin headers.
+
+### 3. Broken Access Control
+- Definition:
+  Users can access data or functions outside their privileges.
+- Impact:
+  Data leaks, privilege escalation, unauthorized actions.
+- Prevention:
+  Implement server-side role checks, never rely on client-side restrictions.
+
+### 4. Security Misconfigurations
+- Definition:
+  Improperly configured servers, databases, or apps (default passwords, verbose errors, open directories).
+- Impact:
+  Attackers gain access or information; system is easily exploitable.
+- Prevention:
+  Harden configurations, remove defaults, disable unnecessary features, patch regularly.
+
+### 5. Sensitive Data Exposure
+- Definition:
+  Storing or transmitting sensitive data insecurely.
+- Impact:
+  Leaks of passwords, credit cards, personal info.
+- Prevention:
+  Encrypt data at rest and in transit, use strong protocols (HTTPS, TLS), avoid exposing secrets.
+
+### 6. Insecure Deserialization
+- Definition:
+  Processing untrusted serialized data without validation.
+- Impact:
+  Remote code execution or privilege escalation.
+- Prevention:
+  Avoid deserialization of untrusted data; validate inputs, use safe libraries.
+
+### 7. Using Components with Known Vulnerabilities
+- Definition:
+  Outdated libraries or frameworks with public exploits.
+- Impact:
+  Exploitation of known vulnerabilities.
+- Prevention:
+  Regularly update dependencies, use vulnerability scanning tools.
+
+### 8. Cross-Site Scripting (XSS)
+- Definition:
+  Injection of malicious scripts into web pages viewed by others.
+- Impact:
+  Session hijacking, phishing, defacement.
+- Prevention:
+  Input validation, output encoding, use CSP, avoid unsafe innerHTML.
+
+### 9. Insufficient Logging & Monitoring
+- Definition:
+  Failing to log events or monitor suspicious activity.
+- Impact:
+  Breaches go undetected; delayed response increases damage.
+- Prevention:
+  Implement centralized logging, alerting, and auditing.
+
+### 10. Broken Authentication
+- Definition:
+  Weak authentication mechanisms or session management issues.
+- Impact:
+  Account takeover, impersonation.
+- Prevention:
+  Enforce strong passwords, MFA, secure session management, limit login attempts.
 
 ### XSS (Cross-Site Scripting)
 - Definition:XSS is a vulnerability that allows an attacker to inject malicious JavaScript into a web application.
